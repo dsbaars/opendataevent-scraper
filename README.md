@@ -13,4 +13,6 @@ Hoe werkt dit?
 --------------
 
 1. Installer scrapy
-2. Zo maak je er een JSON van: `scrapy crawl data_overheid -o <output.json>`
+
+Maak er een JSON van: `scrapy crawl data_overheid -o <output.json>`<br>
+of uncomment `opendataevent.pipelines.OpenDataEventPipeline` in opendataevent/settings.py voor een simpele ICS-export.

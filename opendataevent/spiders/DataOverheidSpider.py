@@ -13,7 +13,7 @@ class DataOverheidSpider(scrapy.Spider):
             e = OpenDataEventItem()
             e['title'] = sel.xpath('div/span/a/text()').extract()
             e['startDate'] = sel.xpath('div/span/span[@class="date-display-single"]/text()').re("(\d{2}\-\d{2}\-\d{4})")
-            e['startTime'] = sel.xpath('div/span/span[@class="date-display-single"]/span[@class="date-display-start"]/text()').extract()
-            e['endTime'] = sel.xpath('div/span/span[@class="date-display-single"]/span[@class="date-display-end"]/text()').extract()
+            e['startTime'] = sel.xpath('div/span/span[@class="date-display-single"]/span[@class="date-display-start"]/text()').re("(\d{2}\:\d{2})")
+            e['endTime'] = sel.xpath('div/span/span[@class="date-display-single"]/span[@class="date-display-end"]/text()').re("(\d{2}\:\d{2})")
             e['link'] = 'https://data.overheid.nl' + sel.xpath('div/span/a/@href').extract()[0]
             yield e

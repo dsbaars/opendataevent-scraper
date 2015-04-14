@@ -10,7 +10,7 @@ import scrapy
 
 class OpenDataEventItem(scrapy.Item):
     title = scrapy.Field()
-    startDate = scrapy.Field()
+    startDate = scrapy.Field(serializer=str)
     endDate = scrapy.Field()
     startTime = scrapy.Field()
     endTime = scrapy.Field()

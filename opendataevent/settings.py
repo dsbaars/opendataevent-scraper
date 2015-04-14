@@ -15,3 +15,6 @@ NEWSPIDER_MODULE = 'opendataevent.spiders'
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = 'opendataevent (+http://www.yourdomain.com)'
+ITEM_PIPELINES = {
+#    'opendataevent.pipelines.OpenDataEventPipeline': 100,
+}
